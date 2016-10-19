@@ -37,6 +37,13 @@ import {Cd} from './cd.model';
             }
           }
         }
+        if (desiredGenre === "CFAGM") {
+          for (var i = 0; i < input.length; i++) {
+            if (input[i].genre === "Cinimatic-Folk-Avant-Garde-Metal") {
+              output.push(input[i]);
+            }
+          }
+        }
 
         return output;
       }

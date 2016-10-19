@@ -3,4 +3,5 @@ import { Cd } from './cd.model';
 export class User {
   public orderTotal: number = 0;
   public albums: Cd [] = [];
+  public isAdmin: boolean = false;
 }

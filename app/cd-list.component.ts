@@ -5,7 +5,7 @@ import { Cd } from './cd.model';
   selector: 'cd-list',
   template: `
   <div class="row">
-    <div class="col-md-3" *ngFor="let currentCd of childCdList | genre:childDesiredGenre">
+    <div class="col-md-3" *ngFor="let currentCd of childCdList | genre:childDesiredGenre | artist:childDesiredArtist">
       <div class="well">
         <p>{{currentCd.artist}}</p>
         <p>{{currentCd.albumName}}</p>
@@ -24,6 +24,7 @@ import { Cd } from './cd.model';
 export class CdListComponent {
   @Input() childCdList: Cd [];
   @Input() childDesiredGenre: string;
+  @Input() childDesiredArtist: string;
   @Output() clickSender = new EventEmitter();
   addToCart(cdToBeAdded: Cd) {
    this.clickSender.emit(cdToBeAdded);

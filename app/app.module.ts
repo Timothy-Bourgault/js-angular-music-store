@@ -4,6 +4,7 @@ import { AppComponent }   from './app.component';
 import { CdListComponent }   from './cd-list.component';
 import { ShoppoingCartComponent }   from './shopping-cart.component';
 import { GenrePipe }   from './genre.pipe';
+import { ArtistPipe }   from './artist.pipe';
 
 @NgModule({
   imports: [BrowserModule],
@@ -11,7 +12,8 @@ import { GenrePipe }   from './genre.pipe';
     AppComponent,
     CdListComponent,
     ShoppoingCartComponent,
-    GenrePipe
+    GenrePipe,
+    ArtistPipe,
   ],
   bootstrap:    [ AppComponent ]
 })
