@@ -8,7 +8,7 @@ import { MasterCdList } from './master-cd-list.model';
   template: `
 
   <div class="container">
-    <h1>Zappa's&nbsp;&nbsp;&nbsp;&nbsp;Music&nbsp;&nbsp;&nbsp;&nbsp;Shop</h1>
+    <h1>Zappa's&nbsp;&nbsp;&nbsp;Music&nbsp;&nbsp;&nbsp;Shop</h1>
     <nav class="navbar navbar-default">
       <div class="container-fluid">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
