@@ -9,7 +9,7 @@ import { Cd } from './cd.model';
       <div class="well">
         <p>{{currentCd.artist}}</p>
         <p>{{currentCd.albumName}}</p>
-        <p>{{currentCd.genre}}</p>
+        <p class="small">{{currentCd.genre}}</p>
         <p>$ {{currentCd.price.toFixed(2)}}</p>
         <img class="album-image" src="{{currentCd.imageUrl}}">
         <div class="center-button">
