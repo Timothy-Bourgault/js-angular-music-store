@@ -12,7 +12,7 @@ import { Cd } from './cd.model';
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <h4 class="modal-title" id="myModalLabel">Shopping Cart</h4>
         </div>
-        <div class="modal-body">
+        <div *ngIf="userChild.albums.length !== 0" class="modal-body">
           <div class="row">
             <div class="col-sm-6">
               <h2>Items in Cart:</h2>
@@ -38,6 +38,9 @@ import { Cd } from './cd.model';
               </div>
             </div>
           </div>
+        </div>
+        <div *ngIf="userChild.albums.length === 0" class="modal-body">
+          <h4>Your Cart is Empty!</h4>
         </div>
         <div class="modal-body" style="padding-top:0px">
           <div class="row">

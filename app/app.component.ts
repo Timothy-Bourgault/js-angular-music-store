@@ -21,7 +21,9 @@ import { MasterCdList } from './master-cd-list.model';
                 <li><a (click)= "onGenreChange('Psychadelic-Rock')" >Psychadelic-Rock</a></li>
                 <li><a (click)= "onGenreChange('Post-Psychadelic')" >Post-Psychadelic</a></li>
                 <li><a (click)= "onGenreChange('Accapella-Experimental')" >Accapella-Experimental</a></li>
-                <li><a (click)= "onGenreChange('Cinimatic-Folk-Avant-Garde-Metal')" >Cinimatic-Folk-Avant-Garde-Metal</a></li>
+                <li><a (click)= "onGenreChange('Electronic-Folk')" >Electronic-Folk</a></li>
+                <li><a (click)= "onGenreChange('Metal-Dub')" >Metal-Dub</a></li>
+
               </ul>
             </li>
           </ul>
@@ -40,6 +42,18 @@ import { MasterCdList } from './master-cd-list.model';
                 <li><a (click)= "onArtistChange('Mike Patton')" >Mike Patton</a></li>
                 <li><a (click)= "onArtistChange('Secret Chiefs 3')" >Secret Chiefs 3</a></li>
                 <li><a (click)= "onArtistChange('Estradasphere')" >Estradasphere</a></li>
+                <li><a (click)= "onArtistChange('Silvan Esso')" >Silvan Esso</a></li>
+                <li><a (click)= "onArtistChange('Oysterhead')" >Oysterhead</a></li>
+                <li><a (click)= "onArtistChange('Dub Trio')" >Dub Trio</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-left">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sort By Price: <strong>{{desiredSort}}</strong><span class="caret"></span></a>
+              <ul class="dropdown-menu dropdown-inverse">
+                <li><a (click)= "onOrderChange('Low to High')" >Low to High</a></li>
+                <li><a (click)= "onOrderChange('High to Low')" >High to Low</a></li>
               </ul>
             </li>
           </ul>
@@ -60,6 +74,7 @@ import { MasterCdList } from './master-cd-list.model';
     [childCdList] = "masterCdList"
     [childDesiredGenre] = "desiredGenre"
     [childDesiredArtist] = "desiredArtist"
+    [childDesiredSort] = "desiredSort"
     (clickSender) = "addToCart($event)"
     ></cd-list>
 
@@ -69,10 +84,17 @@ import { MasterCdList } from './master-cd-list.model';
 
 export class AppComponent {
   public cdList = new MasterCdList();
-  public masterCdList: Cd[] = this.cdList.masterCdList;
+  public masterCdList: Cd[] = this.sortByKeyDecending(this.cdList.masterCdList, "price");
   public user = new User();
   public desiredGenre: string = "All Genres";
   public desiredArtist: string = "All Artists";
+  public desiredSort: string = "High to Low";
+  sortByKeyDecending(array, key) {
+      return array.sort(function(a, b) {
+          var x = a[key]; var y = b[key];
+          return ((x < y) ? 1 : ((x > y) ? -1 : 0));
+      });
+  }
   onGenreChange(optionFromMenu) {
    this.desiredGenre = optionFromMenu;
    console.log(this.desiredGenre);
@@ -80,6 +102,9 @@ export class AppComponent {
   onArtistChange(optionFromMenu) {
    this.desiredArtist = optionFromMenu;
    console.log(this.desiredArtist);
+  }
+  onOrderChange(optionFromMenu){
+    this.desiredSort = optionFromMenu;
   }
   addToCart(cdToBeAdded: Cd) {
     var matchingCd: boolean = false;
@@ -111,9 +136,12 @@ export class AppComponent {
     console.log(this.user.orderTotal);
   }
   addItem(index: number){
-    //TODO: need to check store inventory
     for (let i = 0; i < this.masterCdList.length; i++) {
         if (this.masterCdList[i].id === this.user.albums[index].id ) {
+          if (this.masterCdList[i].quantity === 0) {
+            alert(this.masterCdList[i].albumName + " is OUT OF STOCK!");
+            return;
+          }
             this.masterCdList[i].quantity--;
         }
     }
