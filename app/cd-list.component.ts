@@ -7,13 +7,15 @@ import { Cd } from './cd.model';
   <div class="row">
     <div class="col-md-3" *ngFor="let currentCd of childCdList | genre:childDesiredGenre | artist:childDesiredArtist">
       <div class="well">
-        <p>{{currentCd.artist}}</p>
-        <p>{{currentCd.albumName}}</p>
-        <p class="small">{{currentCd.genre}}</p>
-        <p>$ {{currentCd.price.toFixed(2)}}</p>
+        <div class="cd-info">
+          <p class="artistFont">{{currentCd.artist}}</p>
+          <p class="albumFont">{{currentCd.albumName}}</p>
+          <p class="genreFont">{{currentCd.genre}}</p>
+          <p>$ {{currentCd.price.toFixed(2)}}</p>
+        </div>
         <img class="album-image" src="{{currentCd.imageUrl}}">
         <div class="center-button">
-          <button (click)="addToCart(currentCd)" class="btn btn-success btn-lg">Add To Cart</button>
+          <button (click)="addToCart(currentCd)" class="btn btn-lg">Add To Cart</button>
         </div>
       </div>
     </div>

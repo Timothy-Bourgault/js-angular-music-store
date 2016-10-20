@@ -10,6 +10,45 @@ body{
     font-size: 69px;
     text-align: center;
   }
+  .cd-info{
+    height: 170px;
+  }
+  .dropdown-inverse{
+    background-color: #222;
+    border-color: #080808;
+    &>li>a{
+      color: #999;
+      &:hover{
+        color: #fff;
+        background-color: #000;
+      }
+    }
+    &>.divider {
+      background-color: #000;
+    }
+  }
+  .modal-header, .modal-body, .modal-footer{
+    background-color: #526666;
+    border-color: #16a3a3;
+    .btn{
+      border-color: #16a3a3;
+      background-color: #333;
+      color: #FFF;
+      &:hover{
+        background-color: Orange;
+      }
+    }
+    #checkout{
+      background-color: #919191;
+      &:hover{
+        background-color: Orange;
+      }
+    }
+  }
+  .modal-title{
+    font-size: 4em;
+    font-family: 'Bowlby One', cursive;
+  }
   #pipes{
     padding-top: 1em;
   }
@@ -19,11 +58,25 @@ body{
   #smaller{
     font-size: 12px;
   }
+  .artistFont {
+    font-family: 'Monoton', cursive;
+    font-size: 1.5em;
+  }
+  .albumFont {
+    font-family: 'Rammetto One', cursive;
+    font-size: 1em;
+  }
+  .genreFont {
+    font-family: 'Plaster', cursive;
+    font-size: 1em;
+  }
   .thumbNail {
     height: 120px;
   }
   .well{
     padding-left: 2.5em;
+    background-color: #526666;
+    border-color: #16a3a3;
     p{
       font-weight:bold;
     }
@@ -36,6 +89,14 @@ body{
     }
     .center-button{
       text-align: center;
+      .btn{
+        border-color: #16a3a3;
+        background-color: #333;
+        color: #FFF;
+        &:hover{
+          background-color: Orange;
+        }
+      }
     }
   }
 }

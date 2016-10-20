@@ -31,7 +31,7 @@ import { Cd } from './cd.model';
                 <img class="thumbNail" src="{{currentCd.imageUrl}}">
               </div>
               <div class="col-sm-2">
-                  <h4>{{currentCd.quantity}}&nbsp;&nbsp;&nbsp;<span id="smaller"><span (click)="addItemHandler(i)" class="glyphicon glyphicon-chevron-up"></span>&nbsp;<span class="glyphicon glyphicon-chevron-down"></span></span></h4>
+                  <h4>{{currentCd.quantity}}&nbsp;&nbsp;&nbsp;<span id="smaller"><span (click)="addItemHandler(i)" class="glyphicon glyphicon-chevron-up"></span>&nbsp;<span (click)="subtractItemHandler(i)" class="glyphicon glyphicon-chevron-down"></span></span></h4>
               </div>
               <div class="col-sm-3">
                 <h4>$ {{currentCd.quantity*currentCd.price}}.00</h4>
@@ -50,8 +50,8 @@ import { Cd } from './cd.model';
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close Cart</button>
-          <button type="button" class="btn btn-primary">Checkout</button>
+          <button type="button" class="btn" data-dismiss="modal">Close Cart</button>
+          <button type="button" class="btn" id="checkout">Checkout</button>
         </div>
       </div>
     </div>
@@ -62,7 +62,11 @@ import { Cd } from './cd.model';
 export class ShoppoingCartComponent {
   @Input() userChild: User;
   @Output() addItemSender = new EventEmitter();
+  @Output() subtractItemSender = new EventEmitter();
   addItemHandler(index: number){
     this.addItemSender.emit(index);
+  }
+  subtractItemHandler(index: number){
+    this.subtractItemSender.emit(index);
   }
 }

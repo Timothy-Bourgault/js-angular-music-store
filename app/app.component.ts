@@ -9,13 +9,13 @@ import { MasterCdList } from './master-cd-list.model';
 
   <div class="container">
     <h1>Zappa's&nbsp;&nbsp;&nbsp;Music&nbsp;&nbsp;&nbsp;Shop</h1>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sort By Genre: <strong>{{desiredGenre}}</strong><span class="caret"></span></a>
-              <ul class="dropdown-menu">
+              <ul class="dropdown-menu dropdown-inverse">
                 <li><a (click)= "onGenreChange('All Genres')" >All Genres</a></li>
                 <li><a (click)= "onGenreChange('Avant-Garde-Rap')" >Avant-Garde-Rap</a></li>
                 <li><a (click)= "onGenreChange('Psychadelic-Rock')" >Psychadelic-Rock</a></li>
@@ -28,7 +28,7 @@ import { MasterCdList } from './master-cd-list.model';
           <ul class="nav navbar-nav navbar-left">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Sort By Artist: <strong>{{desiredArtist}}</strong><span class="caret"></span></a>
-              <ul class="dropdown-menu">
+              <ul class="dropdown-menu dropdown-inverse">
                 <li><a (click)= "onArtistChange('All Artists')" >All Artists</a></li>
                 <li><a (click)= "onArtistChange('Pink Floyd')" >Pink Floyd</a></li>
                 <li><a (click)= "onArtistChange('Grateful Dead')" >Grateful Dead</a></li>
@@ -54,6 +54,7 @@ import { MasterCdList } from './master-cd-list.model';
     <shopping-cart
     [userChild] = "user"
     (addItemSender) = "addItem($event)"
+    (subtractItemSender) = "subtractItem($event)"
     ></shopping-cart>
     <cd-list
     [childCdList] = "masterCdList"
@@ -110,6 +111,7 @@ export class AppComponent {
     console.log(this.user.orderTotal);
   }
   addItem(index: number){
+    //TODO: need to check store inventory
     for (let i = 0; i < this.masterCdList.length; i++) {
         if (this.masterCdList[i].id === this.user.albums[index].id ) {
             this.masterCdList[i].quantity--;
@@ -117,6 +119,20 @@ export class AppComponent {
     }
     this.user.albums[index].quantity++;
     this.user.orderTotal+= this.user.albums[index].price;
+    console.log(this.masterCdList);
+    console.log(this.user.albums);
+  }
+  subtractItem(index: number){
+    for (let i = 0; i < this.masterCdList.length; i++) {
+        if (this.masterCdList[i].id === this.user.albums[index].id ) {
+            this.masterCdList[i].quantity++;
+        }
+    }
+    this.user.albums[index].quantity--;
+    this.user.orderTotal-= this.user.albums[index].price;
+    if (this.user.albums[index].quantity === 0) {
+        this.user.albums.splice(index,1);
+    }
     console.log(this.masterCdList);
     console.log(this.user.albums);
   }
