@@ -31,5 +31,9 @@ export class MasterCdList{
     new Cd("Estradasphere", "Quadrapus", "Cinimatic-Folk-Avant-Garde-Metal", 20, "https://upload.wikimedia.org/wikipedia/en/3/38/Quadropus.jpg"),
     new Cd("Estradasphere", "Palace Of Mirrors", "Cinimatic-Folk-Avant-Garde-Metal", 13, "http://cps-static.rovicorp.com/3/JPG_1080/MI0000/641/MI0000641631.jpg?partner=allrovi.com"),
     new Cd("Estradasphere", "Passion For Life", "Avant-Garde-Rap", 17, "https://upload.wikimedia.org/wikipedia/en/1/14/Estradasphere-Passion_for_Life.jpg"),
+    // new Cd("Estradasphere", "Passion For Life", "Avant-Garde-Rap", 17, "https://upload.wikimedia.org/wikipedia/en/1/14/Estradasphere-Passion_for_Life.jpg"),
+    // new Cd("Estradasphere", "Passion For Life", "Avant-Garde-Rap", 17, "https://upload.wikimedia.org/wikipedia/en/1/14/Estradasphere-Passion_for_Life.jpg"),
+    // new Cd("Estradasphere", "Passion For Life", "Avant-Garde-Rap", 17, "https://upload.wikimedia.org/wikipedia/en/1/14/Estradasphere-Passion_for_Life.jpg"),
+    // new Cd("Estradasphere", "Passion For Life", "Avant-Garde-Rap", 17, "https://upload.wikimedia.org/wikipedia/en/1/14/Estradasphere-Passion_for_Life.jpg"),
   ]
 }

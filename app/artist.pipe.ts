@@ -8,7 +8,7 @@ import {Cd} from './cd.model';
   export class ArtistPipe implements PipeTransform {
     transform(input: Cd [], desiredArtist) {
       var output: Cd [] = [];
-      if(desiredArtist !== "all"){
+      if(desiredArtist !== "All Artists"){
         if (desiredArtist === "Pink Floyd") {
           for (var i = 0; i < input.length; i++) {
             if (input[i].artist === "Pink Floyd") {

@@ -8,36 +8,36 @@ import {Cd} from './cd.model';
   export class GenrePipe implements PipeTransform {
     transform(input: Cd [], desiredGenre) {
       var output: Cd [] = [];
-      if(desiredGenre !== "all"){
-        if (desiredGenre === "AGR") {
+      if(desiredGenre !== "All Genres"){
+        if (desiredGenre === "Avant-Garde-Rap") {
           for (var i = 0; i < input.length; i++) {
             if (input[i].genre === "Avant-Garde-Rap") {
               output.push(input[i]);
             }
           }
         }
-        if (desiredGenre === "PR") {
+        if (desiredGenre === "Psychadelic-Rock") {
           for (var i = 0; i < input.length; i++) {
             if (input[i].genre === "Psychadelic-Rock") {
               output.push(input[i]);
             }
           }
         }
-        if (desiredGenre === "PP") {
+        if (desiredGenre === "Post-Psychadelic") {
           for (var i = 0; i < input.length; i++) {
             if (input[i].genre === "Post-Psychadelic") {
               output.push(input[i]);
             }
           }
         }
-        if (desiredGenre === "AE") {
+        if (desiredGenre === "Accapella-Experimental") {
           for (var i = 0; i < input.length; i++) {
             if (input[i].genre === "Accapella-Experimental") {
               output.push(input[i]);
             }
           }
         }
-        if (desiredGenre === "CFAGM") {
+        if (desiredGenre === "Cinimatic-Folk-Avant-Garde-Metal") {
           for (var i = 0; i < input.length; i++) {
             if (input[i].genre === "Cinimatic-Folk-Avant-Garde-Metal") {
               output.push(input[i]);
