@@ -9,7 +9,7 @@ import { MasterCdList } from './master-cd-list.model';
 
   <div class="container">
     <h1>Zappa's&nbsp;&nbsp;&nbsp;Music&nbsp;&nbsp;&nbsp;Shop</h1>
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container-fluid">
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">

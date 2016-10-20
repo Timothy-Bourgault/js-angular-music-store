@@ -5,6 +5,7 @@ body{
   background-repeat: no-repeat;
   background-size: cover;
   h1 {
+    margin-top: 60px;
     color: Orange;
     font-family: "Amethyst";
     font-size: 69px;
@@ -96,6 +97,30 @@ body{
         &:hover{
           background-color: Orange;
         }
+      }
+    }
+  }
+  @media screen and (max-width: 991px) {
+    h1 {
+      margin-top: 120px;
+      font-size: 35px;
+    }
+    .well{
+      text-align: center;
+      font-size: 20px;
+      .album-image{
+        height: 400px;
+      }
+    }
+  }
+  @media screen and (max-width: 1199px) and (min-width: 992px) {
+    h1 {
+      font-size: 50px;
+    }
+    .well{
+      font-size: 12px;
+      .album-image{
+        height: 170px;
       }
     }
   }
