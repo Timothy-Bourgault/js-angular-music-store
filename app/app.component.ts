@@ -44,16 +44,16 @@ import { MasterCdList } from './master-cd-list.model';
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a (click)= "showCart()" >Number of Items: {{ user.itemCount }}</a></li>
-            <li><a (click)= "showCart()" >Order Total: $ {{ user.orderTotal }}.00</a></li>
-            <li id="big"><a (click)= "showCart()" ><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+            <li><a  data-toggle="modal" data-target="#myModal">Number of Items: {{ user.itemCount }}</a></li>
+            <li><a  data-toggle="modal" data-target="#myModal">Order Total: $ {{ user.orderTotal }}.00</a></li>
+            <li id="big"><a data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
           </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
+        </div>
+      </div>
     </nav>
-
     <shopping-cart
-    *ngIf = "viewShoppingCart"
+    [userChild] = "user"
+    (addItemSender) = "addItem($event)"
     ></shopping-cart>
     <cd-list
     [childCdList] = "masterCdList"
@@ -69,7 +69,6 @@ import { MasterCdList } from './master-cd-list.model';
 export class AppComponent {
   public cdList = new MasterCdList();
   public masterCdList: Cd[] = this.cdList.masterCdList;
-  public viewShoppingCart: boolean = false;
   public user = new User();
   public desiredGenre: string = "All Genres";
   public desiredArtist: string = "All Artists";
@@ -84,7 +83,7 @@ export class AppComponent {
   addToCart(cdToBeAdded: Cd) {
     var matchingCd: boolean = false;
     if (cdToBeAdded.quantity === 0) {
-      console.log(cdToBeAdded.albumName + " is OUt OF Stock!");
+      alert(cdToBeAdded.albumName + " is OUT OF STOCK!");
       return;
     }
     this.user.itemCount++;
@@ -99,7 +98,7 @@ export class AppComponent {
         }
     }
     if (!matchingCd) {
-      var userCd = new Cd(cdToBeAdded.artist, cdToBeAdded.albumName, cdToBeAdded.genre, cdToBeAdded.price, cdToBeAdded.imageUrl)
+      var userCd = new Cd(cdToBeAdded.artist, cdToBeAdded.albumName, cdToBeAdded.genre, cdToBeAdded.price, cdToBeAdded.imageUrl);
       userCd.id = cdToBeAdded.id;
       cdToBeAdded.quantity -= 1;
       userCd.quantity = 1;
@@ -110,8 +109,15 @@ export class AppComponent {
     console.log(this.user.albums);
     console.log(this.user.orderTotal);
   }
-  showCart(){
-    this.viewShoppingCart = true;
+  addItem(index: number){
+    for (let i = 0; i < this.masterCdList.length; i++) {
+        if (this.masterCdList[i].id === this.user.albums[index].id ) {
+            this.masterCdList[i].quantity--;
+        }
+    }
+    this.user.albums[index].quantity++;
+    this.user.orderTotal+= this.user.albums[index].price;
+    console.log(this.masterCdList);
+    console.log(this.user.albums);
   }
-
 }
