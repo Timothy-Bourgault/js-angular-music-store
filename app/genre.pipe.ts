@@ -44,6 +44,34 @@ import {Cd} from './cd.model';
             }
           }
         }
+        if (desiredGenre === "Electronic-Folk") {
+          for (var i = 0; i < input.length; i++) {
+            if (input[i].genre === "Electronic-Folk") {
+              output.push(input[i]);
+            }
+          }
+        }
+        if (desiredGenre === "Metal-Dub") {
+          for (var i = 0; i < input.length; i++) {
+            if (input[i].genre === "Metal-Dub") {
+              output.push(input[i]);
+            }
+          }
+        }
+        if (desiredGenre === "Cinimatic-Folk-Avant-Garde-Metal") {
+          for (var i = 0; i < input.length; i++) {
+            if (input[i].genre === "Cinimatic-Folk-Avant-Garde-Metal") {
+              output.push(input[i]);
+            }
+          }
+        }
+        if (desiredGenre === "Piano-Music") {
+          for (var i = 0; i < input.length; i++) {
+            if (input[i].genre === "Piano-Music") {
+              output.push(input[i]);
+            }
+          }
+        }
 
         return output;
       }

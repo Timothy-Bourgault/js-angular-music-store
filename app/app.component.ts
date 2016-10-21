@@ -45,6 +45,7 @@ import { MasterCdList } from './master-cd-list.model';
                 <li><a (click)= "onArtistChange('Silvan Esso')" >Silvan Esso</a></li>
                 <li><a (click)= "onArtistChange('Oysterhead')" >Oysterhead</a></li>
                 <li><a (click)= "onArtistChange('Dub Trio')" >Dub Trio</a></li>
+                <li><a (click)= "onArtistChange('Billy Joel')" >Billy Joel</a></li>
               </ul>
             </li>
           </ul>

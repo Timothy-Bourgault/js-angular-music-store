@@ -34,6 +34,6 @@ export class MasterCdList{
     new Cd("Silvan Esso", "Silvan Esso", "Electronic-Folk", 19, "http://partisanrecords.com/wp-content/uploads/2014/05/SYLVAN_ESSO-self_titled-900x900.jpg"),
     new Cd("Oysterhead", "The Grand Pecking Order", "Electronic-Folk", 13, "https://upload.wikimedia.org/wikipedia/en/4/4c/Oysterhead_-_The_Grand_Pecking_Order.jpg"),
     new Cd("Dub Trio", "IV", "Metal-Dub", 21, "http://speakeasypr.com/wp-content/uploads/2011/12/dubtrioivcover.jpg"),
-    // new Cd("Estradasphere", "Passion For Life", "Avant-Garde-Rap", 17, "https://upload.wikimedia.org/wikipedia/en/1/14/Estradasphere-Passion_for_Life.jpg"),
+    new Cd("Billy Joel", "Greatest Hits", "Piano-Music", 23, "https://images-na.ssl-images-amazon.com/images/I/81RgoBLQOKL._SY355_.jpg"),
   ]
 }
