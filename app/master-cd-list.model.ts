@@ -14,7 +14,7 @@ export class MasterCdList{
     new Cd("Grails", "Deep Politics", "Post-Psychadelic", 8, "http://www.brooklynvegan.com/files/img/metal/various/grailscover.jpg"),
     new Cd("Grails", "Take Refuge In Clean Living", "Post-Psychadelic", 12, "http://www.progarchives.com/progressive_rock_discography_covers/3395/cover_304191122014_r.JPG"),
     new Cd("Grails", "Burning Off Impurities", "Post-Psychadelic", 10, "https://images-na.ssl-images-amazon.com/images/I/41sK7Fp4V5L.jpg"),
-    new Cd("Busdriver", "Beaus and Eros", "Accapella-Experimental", 12, "http://a2.mzstatic.com/us/r30/Music2/v4/0c/25/dc/0c25dca4-5530-6391-c4d6-3575b6df9fa6/669158523665.1200x1200-75.jpg"),
+    new Cd("Busdriver", "Beaus and Eros", "Accapella-Experimental", 12, "https://cdn.shopify.com/s/files/1/0993/9646/products/FFINC034LP_1024x1024.jpeg?v=1466402373"),
     new Cd("Busdriver", "Perfect Hair", "Cinimatic-Avant-Garde-Metal", 20, "https://upload.wikimedia.org/wikipedia/en/thumb/c/c1/Perfect_hair_album_cover.jpg/220px-Perfect_hair_album_cover.jpg"),
     new Cd("Busdriver", "Roadkill Overcoat", "Avant-Garde-Rap", 13, "http://cdn3.pitchfork.com/albums/9656/homepage_large.73b286fa.jpg"),
     new Cd("Aesop Rock", "Labor Days", "Avant-Garde-Rap", 11, "http://images.rapgenius.com/4oasqz2d03mhvndzvj2mkm7qm.600x596x1.jpg"),
